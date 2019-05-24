@@ -8,6 +8,7 @@ namespace Microsoft.EntityFrameworkCore.Relational.Query.Pipeline
 {
     public class NullComparisonTransformingExpressionVisitor : ExpressionVisitor
     {
+        // TODO: Need to also optimize object.Equals() in the same way
         protected override Expression VisitExtension(Expression extensionExpression)
         {
             if (extensionExpression is SqlBinaryExpression sqlBinary
